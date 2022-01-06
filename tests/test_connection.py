@@ -1,7 +1,7 @@
 import pytest
 from requests.models import HTTPError
 
-from lol_qq_parser.utils import query_tjstats
+import lol_qq_parser.utils
 
 
 def test_working_endpoint():
@@ -10,7 +10,9 @@ def test_working_endpoint():
     """
     # Using LPL 2021 Spring standings
 
-    standings = query_tjstats("v1/compound/team?seasonId=148&stageIds=1%2C5")
+    standings = lol_qq_parser.utils.query_tjstats(
+        "v1/compound/team?seasonId=148&stageIds=1%2C5"
+    )
 
     assert standings
     assert standings["success"]
@@ -24,4 +26,4 @@ def test_faulty_endpoint():
     # Trying to get seasons information
 
     with pytest.raises(HTTPError):
-        query_tjstats("v1/schedule/season?iOpen=-1")
+        lol_qq_parser.utils.query_tjstats("v1/schedule/season?iOpen=-1")

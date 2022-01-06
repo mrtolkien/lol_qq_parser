@@ -6,4 +6,10 @@ class Config:
 
 
 class Endpoints:
-    schedule = "v1/schedule/season?iOpen=-1"
+    season = "v1/schedule/season?iOpen=-1"
+
+    match_detail = "v1/compound/matchDetail"
+
+    @classmethod
+    def get_match_detail_url(cls, matchId: int):
+        return f"{cls.match_detail}?matchId={matchId}"

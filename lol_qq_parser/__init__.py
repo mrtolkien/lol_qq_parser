@@ -1,0 +1,1 @@
+from lol_qq_parser.parsers.match_detail import get_series_basic_info
