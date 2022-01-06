@@ -13,6 +13,9 @@ def get_series_basic_info(match_id: int):
     # Validating that it conforms to our schema
     match_detail = lol_qq_parser.schemas.match_detail.Model(**match_detail_raw)
 
+    # Casting it to a LolSeries
+    series = match_detail_to_lol_series(match_detail)
+
 
 def get_match_detail_raw(match_id: int) -> dict:
     """
@@ -21,3 +24,9 @@ def get_match_detail_raw(match_id: int) -> dict:
     match_detail_url = lol_qq_parser.utils.Endpoints.get_match_detail_url(match_id)
 
     return lol_qq_parser.utils.query_tjstats(match_detail_url)
+
+
+def match_detail_to_lol_series(
+    match_detail: lol_qq_parser.schemas.match_detail.Model,
+) -> lol_qq_parser.utils.series_dto.LolSeries:
+    ...
