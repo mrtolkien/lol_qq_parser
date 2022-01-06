@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "lol_qq_parser"
+version = "0.1.0a0"
+description = "A League of Legends parser for QQ data"
+authors = ["mrtolkien <gary.mialaret@gmail.com>"]
+license = "GPLv3"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.27.1"
+lol-dto = "^2.0.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
