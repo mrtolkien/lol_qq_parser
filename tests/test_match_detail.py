@@ -73,6 +73,8 @@ def test_create_lol_series(request, match_id):
     assert series.winner
     assert series.games
 
+    assert series.sources.qq.matchId
+
     score = {}
 
     for game in series.games:
@@ -81,6 +83,8 @@ def test_create_lol_series(request, match_id):
         for side in ("BLUE", "RED"):
             team = getattr(game.teams, side)
 
+            assert team.sources.qq.id
+
             if team.sources.qq.tag not in score:
                 score[team.sources.qq.tag] = 0
 
@@ -88,6 +92,8 @@ def test_create_lol_series(request, match_id):
                 score[team.sources.qq.tag] += 1
 
             for player in team.players:
+                assert player.sources.qq.id
+
                 assert player.championId
                 assert player.role in ["TOP", "JGL", "MID", "BOT", "SUP"]
                 assert player.sources.qq.id
