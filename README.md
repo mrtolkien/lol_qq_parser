@@ -9,8 +9,19 @@ Unofficial Chinese documentation can be [found here](https://documenter.getpostm
 
 ## Installation
 
+### Python package
+
 This is still an experimental package, so the easiest way to install it is through git:
 `pip install git+https://github.com/mrtolkien/lol_qq_parser.git`
+
+### Local API
+
+I also added a basic `FastAPI` Docker image that you can run if you want to use this package's querying and data format inside a more complex stack:
+
+```shell
+docker build -t lol_qq_parser_api .
+docker run -p 80:80 lol_qq_parser_api
+```
 
 ## Examples
 
