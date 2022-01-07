@@ -7,6 +7,11 @@ A League of Legends parser for QQ data
 This package relies on the API used by [lpl.qq.com](https://lpl.qq.com/).
 Unofficial Chinese documentation can be [found here](https://documenter.getpostman.com/view/3922302/UVCCfjUk).
 
+## Installation
+
+This is still an experimental package, so the easiest way to install it is through git:
+`pip install git+https://github.com/mrtolkien/lol_qq_parser.git`
+
 ## Examples
 
 ```python
