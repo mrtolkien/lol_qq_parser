@@ -17,14 +17,12 @@ RUN poetry config virtualenvs.create false
 COPY poetry.lock .
 COPY pyproject.toml .
 
-# Installing only production dependencies
-#   FastAPI is installed already in the Docker image
-RUN poetry install --no-dev --no-root -vv
-
-# This is not in the image but FastAPI requires it...
-RUN pip install click
+# Installing all dependencies for simplicity
+RUN poetry install --no-root -vv
 
 # We copy all the lol_data_api folder inside /app as it is where the Docker images looks for the API
 COPY ./app /app/app
+
+COPY ./lol_qq_parser /app/lol_qq_parser
 
 # The run command is already handled by the parent image
