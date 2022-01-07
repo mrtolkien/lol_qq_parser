@@ -30,6 +30,8 @@ def get_series_basic_info(match_id: int) -> series_dto.LolQQSeries:
     # Casting it to a LolSeries
     series = match_detail_to_lol_series(match_detail)
 
+    return series
+
 
 def get_match_detail_raw(match_id: int) -> dict:
     """
