@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import ORJSONResponse
 import lol_qq_parser
 
 app = FastAPI(
@@ -6,6 +7,7 @@ app = FastAPI(
     description="An API dedicated to retrieving League of Legends data from QQ.com",
     version="0.1",
     contact={"name": "Gary 'Tolki' Mialaret", "email": "gary@statespacelabs.com"},
+    default_response_class=ORJSONResponse,
 )
 
 
