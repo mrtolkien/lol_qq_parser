@@ -6,7 +6,7 @@ from lol_dto.classes.game import (
     LolGamePlayerEndOfGameStats,
     LolGamePlayerItem,
     LolGamePlayerRune,
-    LolGamePlayerSummonerSpell, LolGamePlayerSpecialKill,
+    LolGamePlayerSummonerSpell,
 )
 import lol_qq_parser.utils
 import lol_qq_parser.schemas.match_detail
