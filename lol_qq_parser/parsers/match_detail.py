@@ -160,6 +160,9 @@ def match_detail_to_lol_series(
                         wardsPlaced=player_info.visionDetail.wardPlaced,
                         wardsKilled=player_info.visionDetail.wardKilled,
                         visionWardsBought=player_info.visionDetail.controlWardPurchased,
+
+                        # technically this is wrong, a player COULD get 2 pentakills in a game but...let's cheat ok
+                        pentaKills=1 if player_info.battleDetail.highestMultiKill == 5 else 0,
                     ),
                     runes=[
                         LolGamePlayerRune(id=rune_info.runeId, slot=idx)
